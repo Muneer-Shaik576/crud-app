@@ -52,7 +52,7 @@ const ChooseData=(data)=>{
 
 const [view,setView]=useState([])
 const getTotaldata=async(data)=>{
-    console.log(data);
+    // console.log(data);
     
     let response=await getspecUSers(data);
     setView(response.data)
@@ -79,8 +79,8 @@ const getTotaldata=async(data)=>{
             </TableHead>
             <TableBody>
                 {
-                    users.map(user=>(
-                        <Tbody>
+                    users.map((user,i)=>(
+                        <Tbody key={i}>
                             <TableCell>{user.id}</TableCell>
                             <TableCell>{user.name}</TableCell>
                             <TableCell>{user.email}</TableCell>
@@ -89,7 +89,6 @@ const getTotaldata=async(data)=>{
                                 <Button variant="contained" color="secondary" style={{marginRight:10}} component={Link} to={`/editUser/${user.id}`}>Edit</Button>
                                 <Button variant="contained" onClick={()=>{deleteUserData(user.id)}}> Delete </Button>
                             </TableCell>
-                            
                         </Tbody>
                     
                     ))
@@ -111,8 +110,8 @@ const getTotaldata=async(data)=>{
             </TableHead>
             <TableBody>
                 {
-                    view.map(user=>(
-                        <Tbody>
+                    view.map((user,i)=>(
+                        <Tbody key={i}>
                             <TableCell>{user.id}</TableCell>
                             <TableCell>{user.name}</TableCell>
                             <TableCell>{user.email}</TableCell>

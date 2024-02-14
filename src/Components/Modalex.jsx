@@ -91,7 +91,7 @@ const Modalex=({ChooseData})=>{
     return (
         <>
         
-        <Button variant="contained" onClick={handleOpen}>Select data</Button>
+        <Button variant="contained" style={{margin:"auto 60px "}} onClick={handleOpen}>Select data</Button>
 <Modal
   open={open}
   onClose={handleClose}
@@ -121,9 +121,8 @@ const Modalex=({ChooseData})=>{
                     }
                 </TableBody>
             </StyledTable>
-            <Button variant="contained" onClick={alldelete}>delete</Button>
-            <Button variant="contained" onClick={ViewData}>view sorted Data</Button>
-           
+            <Button variant="contained" style={{marginRight:"20px"}} onClick={alldelete}>delete</Button>
+            <Button variant="contained" onClick={ViewData}>view sorted Data</Button>      
   </Box>
 </Modal>
 
